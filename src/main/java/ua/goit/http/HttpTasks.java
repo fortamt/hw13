@@ -27,14 +27,13 @@ public class HttpTasks {
         System.out.println(HttpUtil.userInfById(5));
 
         //1-6
-        System.out.println("1-6");
         HttpUtil.userInfByUsername("Samantha");
 
         //2-1
         HttpUtil.lastPostComments(2);
 
         //3-1
-        System.out.println(HttpUtil.openedTask(2));
+        System.out.println(HttpUtil.openedTask(3));
     }
 
 
