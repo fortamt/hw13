@@ -4,34 +4,37 @@ import java.io.IOException;
 import java.net.URI;
 
 public class HttpTasks {
-    private static final String TASK1_1_URL = "https://jsonplaceholder.typicode.com/users";
-    private static final String TASK1_2_URL = "https://jsonplaceholder.typicode.com/users/1";
-    private static final String TASK2_1_URL = "https://jsonplaceholder.typicode.com/users/1/posts";
-    private static final String TASK2_1_0_URL = "https://jsonplaceholder.typicode.com/posts/10/comments";
-    private static final String TASK3_URL = "https://jsonplaceholder.typicode.com/users/1/todos";
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
         User user = createDefaultUser();
 
         //1-1
-        final User task1_1 = HttpUtil.createNewObject(URI.create(TASK1_1_URL), user);
+        final User task1_1 = HttpUtil.createNewObject(user);
         System.out.println("Task 1 " + task1_1);
 
-
         //1-2
-        final User task1_2 = HttpUtil.updateObject(URI.create(TASK1_2_URL), user);
+        final User task1_2 = HttpUtil.updateObject(3, user);
         System.out.println("Task 1 " + task1_2);
 
-
         //1-3
-        System.out.println(HttpUtil.deleteObject(URI.create(TASK1_2_URL)));
+        System.out.println(HttpUtil.deleteObject(3));
+
+        //1-4
+        System.out.println(HttpUtil.usersInf());
+
+        //1-5
+        System.out.println(HttpUtil.userInfById(5));
+
+        //1-6
+        System.out.println("1-6");
+        HttpUtil.userInfByUsername("Samantha");
 
         //2-1
-        HttpUtil.lastPostComments(URI.create(TASK2_1_URL), URI.create(TASK2_1_0_URL));
+        HttpUtil.lastPostComments(2);
 
         //3-1
-        System.out.println(HttpUtil.openedTask(URI.create(TASK3_URL)));
+        System.out.println(HttpUtil.openedTask(2));
     }
 
 
@@ -58,7 +61,7 @@ public class HttpTasks {
         user.setUsername("Kurowski");
         user.setMail("fortamt@gmai.com");
         user.setAddress(address);
-        user.setPhone(123456789);
+        user.setPhone("123456789");
         user.setWebsite("mywebsite.com");
         user.setCompany(company);
 

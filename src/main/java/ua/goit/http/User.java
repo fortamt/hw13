@@ -8,7 +8,7 @@ public class User {
     private String username;
     private String mail;
     private Address address;
-    private int phone;
+    private String phone;
     private String website;
     private Company company;
 
@@ -52,11 +52,11 @@ public class User {
         this.address = address;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
