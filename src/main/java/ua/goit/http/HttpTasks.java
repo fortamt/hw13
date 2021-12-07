@@ -12,8 +12,9 @@ public class HttpTasks {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        //1-1
         User user = createDefaultUser();
+
+        //1-1
         final User task1_1 = HttpUtil.createNewObject(URI.create(TASK1_1_URL), user);
         System.out.println("Task 1 " + task1_1);
 

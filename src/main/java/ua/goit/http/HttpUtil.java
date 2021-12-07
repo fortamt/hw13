@@ -61,7 +61,7 @@ public class HttpUtil {
 //        List<Comments> commentsResult = comments.stream()                           ** response returned all comments id with 0
 //                .filter((comments1) -> comments1.getPostID() == post.getId())       ** this part check user post id and comments id, if returning will be working correct
 //                .collect(Collectors.toList());
-        String filename = "user-" + post.getUserId() + "-post" + post.getId() + "-comments.json";
+        String filename = "user-" + post.getUserId() + "-post-" + post.getId() + "-comments.json";
         try(FileWriter writer = new FileWriter(filename)){
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             String json = gson.toJson(comments);
